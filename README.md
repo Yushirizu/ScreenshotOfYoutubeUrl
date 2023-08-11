@@ -31,7 +31,3 @@ pip install pytube
 5. Open the `rename.py` file and replace the `directory_path` and `image_prefix` variables with the directory where the extracted images are located and the prefix to be added to the filenames of the images, respectively.
 
 6. Run the `rename.py` file to rename the extracted images.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
