@@ -15,8 +15,9 @@ git clone https://github.com/Yushirizu/ScreenshotOfYoutubeUrl
 
 2. Install the `pytube` library:
 
-$ pip install pytube
-
+```console
+pip install pytube
+```
 
 ## Usage
 
