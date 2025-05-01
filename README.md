@@ -1,34 +1,51 @@
-# ScreenshotOfYoutubeUrl 
+## Setup and Usage
 
-This is a Python script that downloads a YouTube video and extracts frames from it. The extracted frames are then saved as images and renamed with a specified prefix.
+This guide assumes you have Python 3.6+ installed.
 
-## Requirements
+1.  **Save the Script:** Save the provided Python code as `frame_extractor.py`.
 
-- Python 3.x
-- `pytube` library
+2.  **Set up Python Environment:**
+    *   Open terminal/command prompt in the script's directory.
+    *   Create a virtual environment:
+        ```bash
+        python3 -m venv .venv
+        ```
+    *   Activate the environment:
+        *   macOS/Linux: `source .venv/bin/activate`
+        *   Windows: `.venv\Scripts\activate`
+    *   Install required Python packages:
+        ```bash
+        pip install opencv-python
+        pip install yt-dlp
+        ```
 
-## Installation
+3.  **Run the Script:**
+    *   With the virtual environment activated, run:
+        ```bash
+        python3 frame_extractor.py
+        ```
 
-1. Clone the repository:
-git clone https://github.com/Yushirizu/ScreenshotOfYoutubeUrl
+4.  **Process Flow:**
+    *   The script downloads the video (specified by `YOUTUBE_URL`).
+    *   A window titled "Select Crop Area" will appear showing a video frame.
+    *   **Click and drag** a rectangle over the area you want to crop from future frames.
+    *   Press **Enter** to confirm your selection. (Press **Esc** to try a different frame if needed).
+    *   The script will then automatically extract, crop, and save the specified number of random frames in the `Baldy_Images` directory, named `Baldy_0001.jpg`, etc.
 
+## Output
 
-2. Install the `pytube` library:
+*   Downloaded video is saved in the `Video` directory.
+*   Cropped images are saved in the `Baldy_Images` directory, sequentially named.
 
-```console
-pip install pytube
+## Customization
+
+Edit the constants at the top of `frame_extractor.py` to change the video URL, output directories, file prefix, and the number of images to extract:
+
+```python
+# --- Constants ---
+VIDEO_OUTPUT_DIR = "Video"
+IMAGE_OUTPUT_DIR = "Baldy_Images"
+IMAGE_PREFIX = "Baldy"
+NUM_IMAGES_TO_EXTRACT = 100
+YOUTUBE_URL = "https://youtu.be/i8IHxxCPP5E?si=7mBNAVV4OulPEXoa"
 ```
-
-## Usage
-
-1. Open the `download.py` file and replace the `youtube_url` and `output_path` variables with the URL of the YouTube video you want to download and the directory where you want to save the downloaded video, respectively.
-
-2. Run the `download.py` file to download the YouTube video.
-
-3. Open the `extract.py` file and replace the `video_filename`, `crop_width`, `crop_height`, and `image_prefix` variables with the filename of the downloaded video, the width and height of the cropped frames, and the prefix to be added to the filenames of the extracted images, respectively.
-
-4. Run the `extract.py` file to extract frames from the downloaded video and save them as images.
-
-5. Open the `rename.py` file and replace the `directory_path` and `image_prefix` variables with the directory where the extracted images are located and the prefix to be added to the filenames of the images, respectively.
-
-6. Run the `rename.py` file to rename the extracted images.
