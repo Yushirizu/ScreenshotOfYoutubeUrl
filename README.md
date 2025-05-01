@@ -2,7 +2,7 @@
 
 This guide assumes you have Python 3.6+ installed.
 
-1.  **Save the Script:** Save the provided Python code as `frame_extractor.py`.
+1.  **Clone the repo**
 
 2.  **Set up Python Environment:**
     *   Open terminal/command prompt in the script's directory.
@@ -22,7 +22,7 @@ This guide assumes you have Python 3.6+ installed.
 3.  **Run the Script:**
     *   With the virtual environment activated, run:
         ```bash
-        python3 frame_extractor.py
+        python3 main.py
         ```
 
 4.  **Process Flow:**
